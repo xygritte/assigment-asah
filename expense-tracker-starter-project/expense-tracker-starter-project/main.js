@@ -152,6 +152,14 @@ function createTransactionCard(transaction) {
     notifyTransactionsChanged();
   });
 
+  const editButton = document.createElement('button');
+  editButton.type = 'button';
+  editButton.setAttribute('data-testid', 'transactionItemEditButton');
+  editButton.textContent = 'Edit';
+  editButton.addEventListener('click', () => {
+    startEditing(transaction);
+  });
+
   const deleteButton = document.createElement('button');
   deleteButton.type = 'button';
   deleteButton.setAttribute(
@@ -172,7 +180,7 @@ function createTransactionCard(transaction) {
     notifyTransactionsChanged();
   });
 
-  actions.append(editTypeButton, deleteButton);
+  actions.append(editButton, editTypeButton, deleteButton);
   item.append(title, amount, date, type, actions);
 
   return item;
@@ -291,7 +299,8 @@ function initialize() {
 
   const greeting = document.querySelector('.tracker-header__greeting');
   if (greeting) {
-    greeting.innerHTML = 'Halo, <strong>Ahmad Furqon Ramadhani</strong>';
+    greeting.innerHTML =
+      'Halo, <strong>Ahmad Furqon Ramadhani (furqonramadhani)</strong>';
   }
 
   renderTransactions();
