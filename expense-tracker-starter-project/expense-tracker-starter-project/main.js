@@ -300,7 +300,7 @@ function initialize() {
   const greeting = document.querySelector('.tracker-header__greeting');
   if (greeting) {
     greeting.innerHTML =
-      'Halo, <strong>Ahmad Furqon Ramadhani (furqonramadhani)</strong>';
+      'Halo, <strong>furqonramadhani</strong>';
   }
 
   renderTransactions();
