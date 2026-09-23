@@ -94,7 +94,6 @@
  *  - Saat kolom pencarian dikosongkan, tampilkan kembali seluruh daftar transaksi
  */
 
-
 const STORAGE_KEY = 'expenseTrackerTransactions';
 
 let transactions = [];
