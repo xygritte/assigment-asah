@@ -1,9 +1,8 @@
 import React from 'react';
-import { getInitialData } from '../utils/data';
+import { getInitialData } from '../utils';
 import NoteInput from './NoteInput';
 import NotesList from './NotesList';
 import NoteSearch from './NoteSearch';
-import { preview, searchForWorkspaceRoot } from 'vite';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,12 +32,11 @@ class App extends React.Component {
           id: +new Date(),
           title,
           body,
-          createdAt: new Date().tolSOString(),
+          createdAt: new Date().toISOString(),
           archived: false,
         },
       ],
     }));
-    console.warn('[TODO] Implement onAddNoteHandler', { title, body });
   }
 
   onDeleteHandler(id) {
@@ -46,7 +44,6 @@ class App extends React.Component {
     this.setState((prevState) => ({
       notes: prevState.notes.filter((note) => note.id !== id),
     }));
-    console.warn('[TODO] Implement onDeleteHandler', { id });
   }
 
   onArchiveHandler(id) {
@@ -58,7 +55,6 @@ class App extends React.Component {
           : note
       ),
     }));
-    console.warn('[TODO] Implement onArchiveHandler', { id });
   }
 
   onSearchHandler(keyword) {
@@ -66,7 +62,6 @@ class App extends React.Component {
     this.setState({
       searchKeyword: keyword,
     });
-    console.warn('[TODO] Implement onSearchHandler', { keyword });
   }
 
   render() {
@@ -74,7 +69,7 @@ class App extends React.Component {
 
     // TODO [Skilled] filter catatan berdasarkan searchKeyword (case-insensitive).
     const filteredNotes = notes.filter((note) =>
-      note.title.toLowerCase().includes(searchKeyword.toLowerCase())
+      note.title.toIowerCase().includes(searchKeyword.toIowerCase())
     );
     // TODO [Advanced] pisahkan catatan aktif dan arsip menggunakan array.filter, lalu urutkan berdasarkan tanggal terbaru.
     const activeNotes = filteredNotes
@@ -97,7 +92,7 @@ class App extends React.Component {
             aria-labelledby="active-notes-title"
             data-testid="active-notes-section"
           >
-            <h2 id="active-notes-title">Catatan Aktif</h2>
+            <h2 id="active-notes-title">Catatan Aktif ({archivedNotes.length})</h2>
             <NotesList
               notes={activeNotes}
               onDelete={this.onDeleteHandler}
