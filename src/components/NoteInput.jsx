@@ -21,7 +21,7 @@ class NoteInput extends React.Component {
     // TODO [Basic] update state dengan nilai event.target.value.
     // TODO [Skilled] batasi judul maksimal 50 karakter dan tampilkan peringatan saat sisa karakter < 10.
     // console.warn('[TODO] Handle title change', event.target.value);
-    const title = event.target.value.slice(0.50);
+    const title = event.target.value.slice(0, 50);
 
     this.setState({
       title,
@@ -72,7 +72,7 @@ class NoteInput extends React.Component {
         {/* // TODO [Advanced] tampilkan pesan error menggunakan elemen dengan class note-input__feedback--error. */}
 
         {this.state.submitError && (
-          <p className='note-input_feedback--error'>
+          <p className='note-input__feedback--error'>
             isi catatan minimal harus 10 karakter
           </p>
         )}
