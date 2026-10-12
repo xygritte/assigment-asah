@@ -90,7 +90,7 @@ main { margin: 0 auto; padding: 0 0 80px; width: min(1100px,calc(100% - 48px)); 
 .detail-page__title { font-size: clamp(42px,7vw,72px); letter-spacing: -.065em; line-height: 1.12; margin: 24px 0 15px; overflow-wrap: anywhere; }
 .detail-page__createdAt { color: var(--on-background-grey); font-size: 12px; }
 .detail-divider { height: 1px; background: var(--border); margin: 35px 0; }
-.detail-page__body { color: #d2d2c8; font-size: 15px; line-height: 2; overflow-wrap: anywhere; }
+.detail-page__body { color: #d2d2c8; font-size: 15px; line-height: 2; overflow-wrap: anywhere; white-space: pre-wrap; }
 .detail-page__body p + p { margin-top: 1em; } .detail-page__body strong { color: var(--on-background); } .detail-page__body a { color: var(--primary); text-decoration: underline; }
 .detail-page__action, .homepage__action, .add-new-page__action { position: fixed; display: flex; gap: 10px; bottom: 26px; right: 26px; z-index: 5; }
 .action { display: flex; align-items: center; justify-content: center; font-size: 21px; border: 1px solid var(--border); width: 48px; height: 48px; border-radius: 50%; background-color: var(--surface-raised); color: var(--on-background); cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,.22); transition: transform .2s ease,border-color .2s ease; }
