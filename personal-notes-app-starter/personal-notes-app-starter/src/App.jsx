@@ -157,7 +157,7 @@ function NoteDetailPage({ onDelete, onToggleArchive }) {
         <h1 className="detail-page__title">{note.title || '(Tanpa judul)'}</h1>
         <p className="detail-page__createdAt">Dibuat pada {showFormattedDate(note.createdAt)}</p>
         <div className="detail-divider" />
-        <div className="detail-page__body" dangerouslySetInnerHTML={{ __html: note.body || '<p>Catatan ini belum memiliki isi.</p>' }} />
+        <div className="detail-page__body">{note.body || 'Catatan ini belum memiliki isi.'}</div>
       </article>
       <div className="detail-page__action">
         <button className="action action-secondary" type="button" onClick={() => onToggleArchive(note)} aria-label={note.archived ? 'Batalkan arsip catatan' : 'Arsipkan catatan'} title={note.archived ? 'Batalkan arsip' : 'Arsipkan'}>{note.archived ? '↶' : '⌑'}</button>
