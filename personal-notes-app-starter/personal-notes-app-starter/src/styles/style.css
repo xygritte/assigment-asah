@@ -124,3 +124,14 @@ main { margin: 0 auto; padding: 0 0 80px; width: min(1100px,calc(100% - 48px)); 
   .form-actions { width: 100%; justify-content: flex-end; } .detail-page__action { right: 18px; bottom: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+
+/* Submission polish: small-screen spacing and form control states. */
+.search-bar input:focus-visible { outline: none; }
+.note-item__link:focus-visible { outline-offset: -4px; }
+@media screen and (max-width: 380px) {
+  .app-header { padding: 0 14px; gap: 8px; }
+  .nav-link { padding: 8px 7px; font-size: 10px; }
+  .section-heading { gap: 10px; }
+  .section-heading .primary-button { gap: 5px; font-size: 9px; }
+}
