@@ -61,7 +61,7 @@ function App() {
         <div className="header-caption">RUANG UNTUK IDEMU</div>
       </header>
       <Routes>
-        <Route path="/" element={<HomePage key={location.pathname + location.search + notesVersion} notes={getActiveNotes()} searchInput={searchInput} onSearchChange={updateSearch} />} />
+        <Route path="/" element={<HomePage key={notesVersion} notes={getActiveNotes()} searchInput={searchInput} onSearchChange={updateSearch} />} />
         <Route path="/archives" element={<ArchivePage key={'archives-' + notesVersion} notes={getArchivedNotes()} searchInput={searchInput} onSearchChange={updateSearch} />} />
         <Route path="/notes/new" element={<NewNotePage onAddNote={handleAddNote} />} />
         <Route path="/notes/:id" element={<NoteDetailPage key={location.pathname + notesVersion} onDelete={handleDeleteNote} onToggleArchive={handleToggleArchive} />} />
