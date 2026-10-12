@@ -2,8 +2,6 @@
 
 A React Single Page Application (SPA) for the Dicoding React submission.
 
-> The original starter project was kept in its existing folder. Existing source instructions and comments are retained; the Google Font comment markers remain in `index.html`, and the Vite configuration comment is unchanged.
-
 ## Fitur
 
 - Daftar catatan aktif pada route `/`.
