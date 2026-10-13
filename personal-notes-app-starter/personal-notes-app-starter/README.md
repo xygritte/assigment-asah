@@ -68,3 +68,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+---
+
+## CatatanKita — Personal Notes App (Submission React)
+
+The original starter instructions above are intentionally retained. The app uses React Router for single-page navigation.
+
+### Fitur
+- Daftar catatan aktif di halaman utama (/), dengan judul, waktu pembuatan, dan isi.
+- Detail catatan pada /notes/:id serta tambah catatan pada /notes/new.
+- Hapus catatan dari halaman detail.
+- Arsip dan batal arsip, dengan daftar arsip di /archives.
+- Pencarian berdasarkan judul melalui query parameter URL ?search=.
+- Halaman 404 untuk route yang tidak diketahui.
+- Komponen UI dikelompokkan berdasarkan peran di folder components dan pages.
+- Data menggunakan src/utils/local-data.js sesuai starter dan disimpan di memori, sehingga kembali ke data awal setelah browser di-refresh.
+
+### Menjalankan aplikasi
+Jalankan dari folder personal-notes-app-starter/personal-notes-app-starter:
+
+```bash
+npm install
+npm run dev
+```
+
+Untuk memverifikasi build produksi:
+
+```bash
+npm run build
+npm run preview
+```
+
+Saat mengumpulkan submission, ZIP folder proyek tanpa folder node_modules.
