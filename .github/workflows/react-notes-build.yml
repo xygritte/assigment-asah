@@ -1,0 +1,33 @@
+name: React Notes App Build
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "personal-notes-app-starter/personal-notes-app-starter/**"
+      - ".github/workflows/react-notes-build.yml"
+  push:
+    branches: [main, feat/react-notes-submission]
+    paths:
+      - "personal-notes-app-starter/personal-notes-app-starter/**"
+      - ".github/workflows/react-notes-build.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: personal-notes-app-starter/personal-notes-app-starter
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: personal-notes-app-starter/personal-notes-app-starter/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build application
+        run: npm run build
