@@ -114,3 +114,39 @@ Review all routes and interactions before submitting. Note data is intentionally
 - `src/styles/style.css` — responsive application styling.
 - `src/utils/local-data.js` — provided initial data and note-management functions.
 - `src/utils/index.js` — date-formatting helper.
+
+
+---
+
+## Submission 2 — SPA + API, Context, dan Hooks (2026)
+
+Bagian instruksi starter dan dokumentasi submission sebelumnya di atas tetap dipertahankan sebagai riwayat proyek. **Implementasi terbaru menggunakan Notes API v1**, bukan lagi data di memori dari local-data.js. File local-data.js sengaja tidak dihapus agar kode dan instruksi starter sebelumnya tetap utuh.
+
+### Fitur baru
+
+- Registrasi, login, dan logout menggunakan RESTful API Dicoding: https://notes-api.dicoding.dev/v1
+- Access token disimpan di localStorage; profil pengguna diperoleh dari endpoint users/me.
+- Proteksi daftar, detail, tambah, hapus, arsip dan batal arsip catatan.
+- Catatan setiap akun diambil dari server, sehingga tetap ada setelah refresh atau login ulang.
+- Tema terang/gelap menggunakan React Context dan localStorage.
+- Bahasa Indonesia/Inggris menggunakan React Context dan localStorage.
+- Loading indicator dan pesan kesalahan ketika berkomunikasi dengan API.
+- Custom hook useInput pada login, registrasi, dan halaman tambah catatan.
+- Pencarian judul via URL, 404, arsip, dan tampilan responsif dari submission pertama tetap tersedia.
+
+### Cara menjalankan
+
+Dari folder ini, jalankan:
+
+```bash
+npm ci
+npm run dev
+```
+
+Untuk pengecekan produksi: `npm run build`.
+
+Gunakan email dan password milik akun yang baru diregistrasikan. Perlu koneksi internet karena catatan disimpan di server Dicoding.
+
+### Pengumpulan
+
+ZIP hanya folder proyek ini, termasuk package.json, package-lock.json, index.html dan src. **Jangan sertakan node_modules atau dist.** Source code React/JSX tetap harus disertakan; jangan hanya mengunggah hasil build.
